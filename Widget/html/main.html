@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>中国馆</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/index.css">
+	<style>
+	</style>
+</head>
+<body>
+    <div id="banner">
+    </div>
+   <div class="advice">
+      <img src="../image/ad.png" alt="">
+   </div>
+   <div id="newware">
+      <div class="title_box">
+        <h2 class="title">新着商品</h2>
+        <span class="next">></span>
+      </div>
+       <div class="item-box">
+         <ul id="dresses" style="display:flex;flex-direction:row;justify-content: space-around;">
+           <!-- <li class="item">
+             <div class="img">
+               <img src="./image/dress1.png" alt="">
+             </div>
+             <div class="dre-info">
+                <div class="new">new</div>
+                 <div class="price">￥800</div>
+             </div>
+           </li> -->
+         </ul>
+       </div>
+   </div>
+    <div class="thing-list">
+        <div class="title">商品一览</div>
+       <ul id="things">
+         <!-- <li>
+           <div class="item-box">
+             <img src="image/dress2.png" alt="">
+               <div class="info">
+                 <h4>aaaaaaaaaaaasssdasssssssssss</h4>
+                 <p>￥3000元</p>
+               </div>
+           </div>
+         </li> -->
+       </ul>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+		// var ver = api.version;
+		// var sType = api.systemType;
+		// var sVer = api.systemVersion;
+		// var id = api.deviceId;
+		// var model = api.deviceModel;
+		// var name = api.deviceName;
+		// var cType = api.connectionType;
+		// var winName = api.winName;
+		// var winWidth = api.winWidth;
+		// var winHeight = api.winHeight;
+		// var frameName = api.frameName || '';
+		// var frameWidth = api.frameWidth || '';
+		// var frameHeight = api.frameHeight || '';
+    //
+		// var str = '<ul>';
+		// str += '<li>引擎版本信息: ' + ver + '</li>';
+		// str += '<li>系统类型: ' + sType + '</li>';
+		// str += '<li>系统版本: ' + sVer + '</li>';
+		// str += '<li>设备标识: ' + id + '</li>';
+		// str += '<li>设备型号: ' + model + '</li>';
+		// str += '<li>设备名称: ' + name + '</li>';
+		// str += '<li>网络状态: ' + cType + '</li>';
+		// str += '<li>主窗口名字: ' + winName + '</li>';
+		// str += '<li>主窗口宽度: ' + winWidth + '</li>';
+		// str += '<li>主窗口高度: ' + winHeight + '</li>';
+		// str += '<li>子窗口名字: ' + frameName + '</li>';
+		// str += '<li>子窗口宽度: ' + frameWidth + '</li>';
+		// str += '<li>子窗口高度: ' + frameHeight + '</li>';
+		// str += '</ul>';
+    //
+		// $api.byId('sys-info').innerHTML = str;
+
+    var data2 =[
+      {
+        img:"../image/dress1.png",
+        new:"new",
+        price:"￥800"
+      },
+      {
+        img:"../image/dress1.png",
+        new:"new",
+        price:"￥800"
+      },
+      {
+        img:"../image/dress1.png",
+        new:"new",
+        price:"￥800"
+      }
+    ];
+    function add2() {
+      var str ="";
+      var dresses =$api.byId("dresses");
+      for(var i=0;i<data2.length;i++){
+            str+='<li class="item"><img src="'+data2[i].img+'"><div class="dre-info"><div class="new">'+data2[i].new+'</div><div class="price">'+data2[i].price+'</div></div></li>'
+      }
+     dresses.innerHTML=str;
+    }
+    add2();
+    var data =[
+      {
+         img:"../image/dress2.png",
+         description:"aaaaaaaaaaaaaaaaaaaaaaaa",
+         price:"￥30000"
+      },
+      {
+         img:"../image/dress2.png",
+         description:"aaaaaaaaaaaaaaaaaaaaaaaa",
+         price:"￥30000"
+      },
+      {
+         img:"../image/dress2.png",
+         description:"aaaaaaaaaaaaaaaaaaaaaaaa",
+         price:"￥30000"
+      },
+      {
+         img:"../image/dress2.png",
+         description:"aaaaaaaaaaaaaaaaaaaaaaaa",
+         price:"￥30000"
+      }
+    ];
+    function add(){
+    var things =$api.byId("things");
+    var str ="";
+      for(var i=0;i<data.length;i++){
+        str+='<li><div class="item-box"><img src="'+data[i].img+'"><div class="info"><h4>'+data[i].description+'</h4><p>'+data[i].price+'</p></div></div></li>'
+      }
+      things.innerHTML=str;
+    }
+    add();
+    var banner = $api.byId('banner');
+    var UIScrollPicture = api.require('UIScrollPicture');
+    function  open(){
+      UIScrollPicture.open({
+          rect: {
+              x: banner.offsetLeft,
+              y: banner.offsetTop,
+              w: banner.clientWidth,
+              h: banner.clientHeight
+          },
+          data: {
+              paths: [
+                  'widget://image/b1.png',
+                  'widget://image/b2.png',
+                  'widget://image/b3.png',
+                  'widget://image/b4.png'
+              ],
+              // captions: ['apicloud', 'apicloud', 'apicloud', 'apicloud']
+          },
+          styles: {
+              indicator: {
+                 dot:{
+                   w:10,
+                   h:30,
+                   r:5,
+                   margin:10
+                },
+                  align: 'center',
+                  color: '#FFFFFF',
+                  activeColor: 'rgb(79,20,20)'
+              }
+          },
+          placeholderImg: 'widget://image/b1.png',
+          contentMode: 'scaleToFill',
+          interval: 5,
+          fixedOn:api.frameName,
+          loop:true,
+          fixed: false,
+          auto:true
+      }, function(ret, err) {
+          // if (ret) {
+          //     alert(JSON.stringify(ret));
+          // } else {
+          //     alert(JSON.stringify(err));
+          // }
+      });
+
+    }
+     open();
+
+    };
+</script>
+</html>

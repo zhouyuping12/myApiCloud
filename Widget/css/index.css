@@ -1,0 +1,122 @@
+ul,ol{
+  list-style: none;
+}
+img{
+  width: 100%;
+}
+#header{
+    text-align: center; background-color: #fff;
+    width: 100%;
+}
+#header h1{
+    font-size: 22px; height: 44px; line-height:44px; margin: 0em; color:black;
+}
+#main{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    background-color: #f1f1f1;
+}
+.advice{
+  margin: 1rem;
+}
+#banner{
+  width: 100%;
+  height:150px;
+  margin-top: 10px;
+}
+.advice img{
+  width: 100%;
+  height: 100%;
+}
+#newware{
+  padding: 0 2%;
+  box-sizing: border-box;
+  width:92%;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 20px!important;
+  margin: 0 auto;
+}
+.title_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title_box .title{
+  font-size: 24px;
+  color:black;
+  letter-spacing: 3px;
+}
+.title_box .next{
+   color: #eee;
+   font-size: 40px;
+}
+.item{
+  width: 31%;
+  float: right;
+  padding:0 1%;
+}
+.item img{
+  width: 100%;
+}
+.dre-info{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+  padding:0.3rem;
+}
+.dre-info .new{
+  color: #fff;
+  background-color: pink;
+  padding:3px 5px;
+  border-radius: 10px;
+}
+.dre-info .price{
+  font-size: 20px;
+  color: black;
+}
+.thing-list{
+  background-color: #fff;
+}
+.thing-list .title{
+  color: black;
+  font-size: 24px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  width: 100%;
+  font-weight: bolder;
+}
+.thing-list #things{
+  background-color:#eee;
+}
+#things li{
+  float: left;
+  width: 49%;
+  background-color: #fff;
+}
+/*.thing-list .item-box{
+  padding-right: 4%;
+}*/
+.thing-list .item-box .info{
+  padding:10px;
+  box-sizing: border-box;
+}
+.thing-list .info h4{
+  letter-spacing: 2px;
+  font-size: 22px;
+  /*line-height:30px;*/
+  /*word-wrap: break-word;*/
+  word-break: break-all;
+}
+.thing-list .info p{
+  color:red;
+  font-size: 20px;
+}
+#things li:nth-of-type(odd){
+  margin-right: 2%;
+}
